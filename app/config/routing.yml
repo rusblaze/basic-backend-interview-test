@@ -1,3 +1,5 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+rusblaze_api.user_all:
+    path:  /
+    defaults: { _controller: RusblazeApiBundle:Home:hello, _format: json }
+    requirements:
+        _method: GET

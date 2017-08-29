@@ -1,0 +1,16 @@
+Rusblaze\ApiBundle\Dto\Neo:
+#  exclusion_policy: ALL
+  properties:
+      is_potentially_hazardous_asteroid:
+          expose: true
+          type: boolean
+      neo_reference_id:
+          expose: true
+          type: string
+      name:
+          expose: true
+          type: string
+      close_approach_data:
+          expose: true
+          type: array<Rusblaze\ApiBundle\Dto\CloseApproachData>
+          max_depth: 20

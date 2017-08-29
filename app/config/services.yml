@@ -2,6 +2,8 @@
 # https://symfony.com/doc/current/service_container.html
 parameters:
     #parameter_name: value
+    neo.base_url: '%neo_base_url%'
+    neo.api_key: '%neo_api_key%'
 
 services:
     # default configuration for services in *this* file
@@ -13,7 +15,6 @@ services:
         # this means you cannot fetch services directly from the container via $container->get()
         # if you need to do this, you can override this setting on individual services
         public: false
-
     # makes classes in src/AppBundle available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     Rusblaze\ApiBundle\:
@@ -30,6 +31,7 @@ services:
         tags: ['controller.service_arguments']
 
     # add more services, or override services that need manual wiring
-    # AppBundle\Service\ExampleService:
-    #     arguments:
-    #         $someArgument: 'some_value'
+    Rusblaze\ApiBundle\Service\NasaNeoService:
+        public: true
+        arguments: ['@jms_serializer', '%neo.base_url%', '%neo.api_key%']
+

@@ -1,4 +1,25 @@
-rusblaze_api.user_all:
+rusblaze_api.neo.hazardous:
+    path:  /neo/hazardous
+    defaults: { _controller: RusblazeApiBundle:Neo:hazardous, _format: json }
+    requirements:
+        _method: GET
+rusblaze_api.neo.fastest:
+    path:  /neo/fastest
+    defaults: { _controller: RusblazeApiBundle:Neo:fastest, _format: json }
+    requirements:
+        _method: GET
+rusblaze_api.neo.best-year:
+    path:  /neo/best-year
+    defaults: { _controller: RusblazeApiBundle:Neo:bestYear, _format: json }
+    requirements:
+        _method: GET
+rusblaze_api.neo.best-month:
+    path:  /neo/best-month
+    defaults: { _controller: RusblazeApiBundle:Neo:bestMonth, _format: json }
+    requirements:
+        _method: GET
+
+rusblaze_api.home:
     path:  /
     defaults: { _controller: RusblazeApiBundle:Home:hello, _format: json }
     requirements:

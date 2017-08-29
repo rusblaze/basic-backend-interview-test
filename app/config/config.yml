@@ -57,8 +57,20 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
+        entity_managers:
+          default:
+            naming_strategy: doctrine.orm.naming_strategy.underscore
+            auto_mapping: false
+            mappings:
+              # An array of mappings, which may be a bundle name or something else
+              RusblazeCoreDomain:
+                  mapping:              true
+                  type:                 xml
+                  dir:                  %kernel.project_dir%/src/Rusblaze/CoreDomainBundle/Resources/config/doctrine/
+                  alias:                RusblazeCoreDomain
+                  prefix:               Rusblaze\CoreDomain
+                  is_bundle:            false
+
 
 # Swiftmailer Configuration
 #swiftmailer:
@@ -76,7 +88,7 @@ fos_rest:
         enabled: true
         rules:
             - { path: '^/', priorities: ['json'], fallback_format: 'html' }
-    versioning: true
+    versioning: false
     view:
         view_response_listener: 'force'
 
@@ -86,6 +98,22 @@ sensio_framework_extra:
 jms_serializer:
     metadata:
         directories:
-            CoreDomain:
-                namespace_prefix: "Rusblaze\\CoreDomain"
+            ApiBundle:
+                namespace_prefix: "Rusblaze\\ApiBundle"
                 path: "@RusblazeApiBundle/Resources/config/serializer/"
+    default_context:
+        serialization:
+            serialize_null: false
+            version: ~
+            attributes: {}
+            groups: ['Default']
+            enable_max_depth_checks: false
+        deserialization:
+            serialize_null: false
+            version: ~
+            attributes: {}
+            groups: ['Default']
+            enable_max_depth_checks: false
+#            CoreDomain:
+#                namespace_prefix: "Rusblaze\\CoreDomain"
+#                path: "@RusblazeCoreDomain/Resources/config/serializer/"

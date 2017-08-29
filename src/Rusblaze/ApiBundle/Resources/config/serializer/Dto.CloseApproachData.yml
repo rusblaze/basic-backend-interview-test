@@ -1,0 +1,8 @@
+Rusblaze\ApiBundle\Dto\CloseApproachData:
+#  exclusion_policy: ALL
+  properties:
+      relative_velocity:
+          expose: true
+          serialized_name: relative_velocity
+          type: Rusblaze\ApiBundle\Dto\RelativeVelocity
+          max_depth: 20

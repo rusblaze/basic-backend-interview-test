@@ -8,7 +8,13 @@
 
 namespace Rusblaze\CoreDomainBundle;
 
-class RusblazeCoreDomainBundle
-{
+use Rusblaze\CoreDomainBundle\DependencyInjection\RusblazeCoreDomainExtension;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+class RusblazeCoreDomainBundle extends Bundle
+{
+    public function getContainerExtension()
+    {
+        return new RusblazeCoreDomainExtension();
+    }
 }

@@ -1,3 +1,42 @@
+# mcmakler Developer Interview
+Application is based on [this article](http://williamdurand.fr/2013/08/07/ddd-with-symfony2-folder-structure-and-code-first/).
+I tried to implement basic DDD principles.
+
+Common test execution time is 8 hours (4 times more then planned).
+### Used stack:
+- Symfony 3 + Doctrine
+- Postgresql
+- Guzzlehttp
+- Phpunit 
+
+**Additional bundles:**
+- [DoctrineMigrationsBundle](https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html)
+- [FOSRestBundle](https://symfony.com/doc/current/bundles/FOSRestBundle/index.html)
+- [JMSSerializerBundle](http://jmsyst.com/bundles/JMSSerializerBundle)
+
+**Additional packets:**
+- [gesdinet/doctrine-functions-psql](https://github.com/gesdinet/doctrine-functions-psql)
+
+## Parameters
+Used standard parameters files for Symfony.
+Added
+- neo_base_url (https://api.nasa.gov/neo/)
+- neo_api_key (N7LkblDsc5aen05FJqBQ8wU4qSdmsftwJagVK7UD for this test)
+
+## Commands
+```
+tree src/Rusblaze/ApiBundle/Command/
+src/Rusblaze/ApiBundle/Command/
+└── LoadNeoObjects.php
+```
+
+#### Usage
+```
+$ php bin/console rusblaze:load-neo
+```
+Initial task is under the line
+--------
+
 # Basic Backend Developer Interview
 
 Dear candidate, please follow this readme and solve all questions.

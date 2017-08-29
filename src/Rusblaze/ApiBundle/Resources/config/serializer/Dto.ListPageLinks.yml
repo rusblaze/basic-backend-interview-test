@@ -1,0 +1,12 @@
+Rusblaze\ApiBundle\Dto\ListPageLinks:
+#  exclusion_policy: ALL
+  properties:
+      next:
+          expose: true
+          type: string
+      prev:
+          expose: true
+          type: string
+      self:
+          expose: true
+          type: string

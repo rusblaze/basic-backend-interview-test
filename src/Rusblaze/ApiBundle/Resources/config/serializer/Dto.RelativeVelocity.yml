@@ -1,0 +1,7 @@
+Rusblaze\ApiBundle\Dto\RelativeVelocity:
+#  exclusion_policy: ALL
+  properties:
+      kilometers_per_hour:
+          expose: true
+          serialized_name: kilometers_per_hour
+          type: float

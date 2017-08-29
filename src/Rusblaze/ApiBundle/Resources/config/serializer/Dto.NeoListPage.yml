@@ -1,0 +1,11 @@
+Rusblaze\ApiBundle\Dto\NeoListPage:
+#  exclusion_policy: ALL
+  properties:
+      links:
+          expose: true
+          serialized_name: links
+          type: Rusblaze\ApiBundle\Dto\ListPageLinks
+      near_earth_objects:
+          serialized_name: near_earth_objects
+          type: array<string, array<Rusblaze\ApiBundle\Dto\Neo>>
+          max_depth: 20
